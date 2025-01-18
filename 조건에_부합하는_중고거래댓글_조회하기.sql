@@ -1,0 +1,11 @@
+SELECT b.TITLE, b.BOARD_ID, r.REPLY_ID, r.WRITER_ID, r.CONTENTS, DATE_FORMAT(r.CREATED_DATE,'%Y-%m-%d') as CREATED_DATE
+from USED_GOODS_BOARD as b 
+JOIN USED_GOODS_REPLY as r on b.BOARD_ID=r.BOARD_ID
+where b.CREATED_DATE between '2022-10-01' AND '2022-10-31'
+order by CREATED_DATE, TITLE;
+
+
+
+
+
+# between A and B 2022년 10월에 작성된 게시글 찾을 때 사용함
