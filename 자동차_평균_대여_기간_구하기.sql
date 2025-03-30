@@ -1,0 +1,11 @@
+SELECT CAR_ID, ROUND(AVG(DATEDIFF(END_DATE, START_DATE)+1), 1) as AVERAGE_DURATION
+from CAR_RENTAL_COMPANY_RENTAL_HISTORY
+group by CAR_ID
+having AVERAGE_DURATION>=7
+order by AVERAGE_DURATION desc, CAR_ID desc
+
+
+
+
+
+#날짜 차이 계산할때 DATEDIFF 함수 사용. 날짜 차에 +1 해야 실제 기간 구할 수 있다.
